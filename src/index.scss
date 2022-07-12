@@ -1,0 +1,282 @@
+@import "./styles/reset";
+@import "./styles/variables";
+@import "./styles/foreach";
+@import "./styles/mixins";
+@import "./styles/placeholders";
+@import "./styles/animations";
+
+body {
+  background-color: $dark;
+}
+
+
+.main-container {
+  margin: auto;
+  
+  padding-top: 8vh;
+  padding-left: 8%;
+  padding-right: 5%;
+  position: relative;
+}
+@media screen and (max-width: 900px) {
+  .main-container {
+    margin-top: 4rem;
+    padding: 5%;
+    position: relative;
+  }
+}
+
+
+
+.actions {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 2rem;
+  border-radius: $radius;
+}
+
+.add-btn {
+  color: grey;
+  display: flex;
+  align-items: center;
+  background-color: $secondary;
+  padding: 0.8rem;
+  text-transform: uppercase;
+  margin: 0 2rem;
+  img {
+    margin-right: 1rem;
+  }
+  &:hover {
+    background-color: grey;
+    color: black;
+  }
+}
+
+
+
+.form-group {
+  margin: auto;
+  width: 100%;
+}
+
+select {
+  position: relative;
+  font-family: Arial;
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 0 1.5rem;
+  
+
+  &:focus{
+    border: none;
+    outline: none;
+  }
+}
+
+option{
+  background-color: black;
+  
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+
+.modal {
+
+
+  position: absolute;
+  color: whitesmoke;
+  border-radius: 1rem;
+  padding: 1rem;
+  top: 40%;
+  left: 50%;
+  max-width: 90rem;
+  min-width: 300px;
+  transform: translate(-50%, -50%);
+}
+.btn-form-submit {
+  @extend %btn-form-submit;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 9999999999;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.801);
+}
+
+
+.dialog_form {
+  display: flex;
+  
+  padding: 4rem 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: $radius;
+  background-color: $secondary;
+
+  .form-group {
+    display: flex;
+    justify-content: center;
+
+  }
+}
+
+
+.close-Modal {
+  position: absolute;
+  color: $primary;
+  font-weight: bolder;
+  right: 1rem;
+  padding: 1.8rem 1rem;
+}
+
+
+
+.list {
+  margin: auto;
+display: flex;
+flex-wrap: wrap;
+margin-top: 2rem;
+justify-content: center;
+
+
+}
+
+.big-title {
+  animation: flip-in-hor-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+border: 3px solid $darkBlue;
+border-radius: $radius;
+
+  color: $red;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+margin: 2rem auto;
+  font-size: 3rem;
+  max-width: 1200px;
+} 
+
+.red-title {
+  color: $red;
+
+}
+.title-card {
+  font-size: 1.8rem;
+  color: $red;
+  @extend %text-cut;
+
+}
+
+
+.no-product {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  border: solid 3px $darkBlue;
+  padding: 1rem;
+  
+}
+
+
+
+.count {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+}
+
+
+.title-kanban{
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.title-tag{
+  position: absolute;
+font-size: 1.6rem;
+background-color: $green;
+z-index: 999;
+border-radius: $radius;
+color: $dark;
+padding: 0.3rem;
+top: -10px;
+right: -10px;
+}
+
+.days-unt {
+  font-size: 1.8rem;
+  margin: 2rem 0;
+  text-transform: uppercase;
+  text-align: center;
+  span {
+    margin: 0 1rem;
+    background-color: $primary;
+   border-radius: $radius;
+  padding: 0.4rem 1rem;
+  
+    
+  }
+}
+
+
+form {
+  padding: 0 3rem;
+  min-height: 20rem;
+  h3{
+    margin-bottom: 2rem;
+  }
+}
+
+.custom-file-upload {
+  position: relative;
+ 
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  width: 100%;
+  
+  img{
+    position: absolute;
+    height: 100%;
+   right: 10px;
+   top: 0;
+  
+  }
+}
+
+.input-files {
+
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.btn-form-submit{
+  margin: 1rem 0;
+}

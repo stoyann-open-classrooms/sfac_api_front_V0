@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  color: #fff;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0.3rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:active {
+  transform: scale(0.98);
+}
+
+input {
+  flex-grow: 2;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+}
+
+input:focus {
+  outline: none;
+}
+
+table {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+thead {
+  padding: 0.6rem;
+}
+thead tr th {
+  padding: 1rem;
+  background-color: #e3001b;
+}
+
+tbody {
+  padding: 1rem;
+}
+tbody tr td {
+  padding: 1rem;
+  background-color: #55565c;
+}
+
+.order-link {
+  color: white;
+  text-decoration: underline;
+  letter-spacing: 1px;
+}
+.order-link:hover {
+  color: #e3001b;
+}/*# sourceMappingURL=KanbanOrderTable.css.map */

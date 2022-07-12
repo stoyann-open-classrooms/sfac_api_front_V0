@@ -1,0 +1,21 @@
+@import "../styles/reset";
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.error-main {
+  background-color: $secondary;
+  height: 100vh;
+}
+hgroup {
+  font-size: 3vw;
+
+  color: white;
+  padding-top: 29vh;
+
+  text-align: center;
+  h1 {
+    margin-bottom: 2rem;
+    font-size: 10vw;
+  }
+}
+

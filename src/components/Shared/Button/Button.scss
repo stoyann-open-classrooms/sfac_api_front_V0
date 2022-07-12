@@ -1,0 +1,40 @@
+@import "../../../styles/reset";
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+@import "../../../styles/placeholders";
+
+.btn {
+  color: #fff;
+  border: 0;
+  border-radius: 0.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 10rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #202142;
+}
+
+.btn-secondary {
+  background: $primary;
+}
+
+.btn:hover {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.btn:disabled {
+  background-color: #04030f;
+  color: #333;
+  cursor: auto;
+}
+
+.btn:disabled:hover {
+  transform: scale(1);
+  opacity: 1;
+}

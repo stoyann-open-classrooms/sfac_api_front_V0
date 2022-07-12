@@ -1,0 +1,57 @@
+@import "../../../styles/reset";
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+@import "../../../styles/placeholders";
+
+.accord {
+
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 1200px;
+  height: auto;
+  background-color: white;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+}
+
+.accord-visible {
+ 
+  background-color: $secondary;
+color: $darkBlue;
+  cursor: pointer;
+  
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2.3rem;
+  padding: 1.5rem;
+  font-weight: 300;
+
+  img {
+    transform: rotate(180deg);
+    width: 20px;
+  }
+}
+
+.accord-toggle {
+  font-size: 1.8rem;
+  opacity: 0;
+
+  transition: opacity 0.4s ease-in-out, height 0.4s 0.4s ease-in-out;
+  p {
+    padding: 1.5rem;
+    pointer-events: none;
+    line-height: 2.3rem;
+    color: $primary;
+  }
+}
+
+.animated {
+  opacity: 1;
+  transition: height 0.4s ease-in-out, opacity 0.4s 0.4s ease-in-out;
+}

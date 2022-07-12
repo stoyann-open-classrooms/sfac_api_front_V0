@@ -1,0 +1,32 @@
+@import "../../styles/reset";
+@import "../../styles/variables";
+@import "../../styles/foreach";
+@import "../../styles/mixins";
+@import "../../styles/placeholders";
+
+.home-recap {
+    display: flex;
+    justify-content: space-between;
+   max-width: 1200px;
+   margin: auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+.recap {
+  animation: flip-in-hor-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+    background-color: #fff;
+    
+    color: black;
+    margin: 0 1rem;
+    border-radius: $radius;
+    flex: 1;
+box-shadow: $shadow;
+    padding: 1rem;
+    p{
+        font-size: 2rem;
+        font-weight: bolder;
+    }
+}

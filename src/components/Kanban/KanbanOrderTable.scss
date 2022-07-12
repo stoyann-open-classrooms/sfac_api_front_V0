@@ -1,0 +1,41 @@
+@import "../../styles/reset";
+@import "../../styles/variables";
+@import "../../styles/mixins";
+@import "../../styles/placeholders";
+
+
+table{
+width: 100%;
+max-width: 1200px;
+
+margin: auto;
+
+}
+
+thead{
+    padding: 0.6rem;
+  tr{
+    th {
+      padding: 1rem;
+        background-color: $primary;
+    }
+  }
+}
+tbody{
+    padding: 1rem;
+  tr{
+    td {
+      padding: 1rem;
+        background-color: $darkBlue;
+    }
+  }
+}
+
+.order-link{
+  color: white;
+  text-decoration: underline;
+  letter-spacing: 1px;
+  &:hover{
+    color: $primary;
+  }
+}
