@@ -3,7 +3,7 @@ import ProductContext from "../../context/Product/ProductContext";
 import AlertContext from "../../context/Alerte/AlerteContext";
 
 import axios from "axios";
-import Alert from "../Shared/Alert/Alert";
+
 function KanbansAddForm() {
   const [kanban, setKanban] = useState({});
   const { products, loading, fetchProducts } = useContext(ProductContext);
@@ -11,7 +11,7 @@ function KanbansAddForm() {
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [products]);
   const handleForm = (e) => {
     e.preventDefault();
     console.log(kanban);

@@ -2,7 +2,7 @@ import React from 'react'
 import { useContext, useEffect } from "react";
 import KanbanContext from "../../context/Kanban/KanbanContext";
 import SearchContext from "../../context/Search/searchContext";
-import Alert from '../Shared/Alert/Alert';
+
 import ProductsItem from "./KanbansItem";
 
 function KanbansList() {

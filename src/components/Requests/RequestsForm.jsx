@@ -3,11 +3,11 @@ import axios from "axios";
 import Button from "../Shared/Button/Button";
 import { useContext } from "react";
 import AlertContext from "../../context/Alerte/AlerteContext";
-import Alert from "../Shared/Alert/Alert";
+
 
 function RequestsForm({request}) {
 
-  const [message, setMessage] = useState("");
+
 const {setAlert} = useContext(AlertContext)
 
 
@@ -41,7 +41,7 @@ const {setAlert} = useContext(AlertContext)
       setAlert("demande traiter", 'error');
    
       setTimeout(() => window.location.reload(), 2000)
-      setMessage("");
+    
       setOrder({
         status: "En cours",
         num_commande: "",

@@ -13,8 +13,7 @@ import Products from "./pages/Products/Products";
 import Header from "./components/Header/Header.jsx";
 import Order from "./pages/Order/Order";
 import {AlertProvider} from "./context/Alerte/AlerteContext";
-import Dialog from "./components/Shared/Dialog/Dialog";
-import Alert from "./components/Shared/Alert/Alert";
+
 function App() {
   return (
 
