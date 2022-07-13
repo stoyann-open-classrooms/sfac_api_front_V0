@@ -1,18 +1,20 @@
-import React from 'react'
+import {useContext} from 'react'
 import { Link } from 'react-router-dom'
 import { FaTimes, FaEdit } from 'react-icons/fa'
 import Card from '../Shared/Card/Card'
 import axios from 'axios'
-
+import AlertContext from "../../context/Alerte/AlerteContext"
 function ProductsItem({ product }) {
-
+  const {setAlert} = useContext(AlertContext)
   const deleteItem = (id) => {
  
     if(window.confirm('êtes vous certains de vouloir supprimer ce produit ?')) {
  
      axios.delete(`
      http://localhost:9000/sfac/api/produit/${id}`);
-     window.location.reload();
+     setAlert(`Le  Produit a été supprimé avec succès`, 'error')
+  
+     setTimeout(() => window.location.reload(), 2000)
    }
    
    }

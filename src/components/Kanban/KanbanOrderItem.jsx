@@ -1,8 +1,6 @@
 import React from 'react'
-import { FaTimes, FaEdit } from 'react-icons/fa'
 import Card from '../Shared/Card/Card'
-import NoPics from '../Assets/no_picture.png'
-import { Link } from 'react-router-dom'
+
 import "../Orders/Orders.css"
 import './Kanban.css'
 function KanbanOrdersItem({ order }) {

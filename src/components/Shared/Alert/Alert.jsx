@@ -10,9 +10,9 @@ function Alert() {
   return alert !==  null && (
     <div className='alert'>
 <p>
-    {alert.type === 'error' && (
+    {/* {alert.type === 'error' && (
         <img src= {warning} alt="" />
-    ) }
+    ) } */}
     <p>{alert.msg}</p>
 </p>
     </div>

@@ -1,7 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import ProductContext from "../../context/Product/ProductContext";
 import AlertContext from "../../context/Alerte/AlerteContext";
-
 import axios from "axios";
 
 function KanbansAddForm() {
@@ -11,15 +10,14 @@ function KanbansAddForm() {
 
   useEffect(() => {
     fetchProducts();
-  }, [products]);
+  }, []);
   const handleForm = (e) => {
     e.preventDefault();
     console.log(kanban);
     axios.post("http://localhost:9000/sfac/api/kanban/addKanban", kanban);
-
-    setAlert('Kanban ajouter', 'error')
-  
+    
     setTimeout(() => window.location.reload(), 2000)
+    setAlert(`Le  kanban a été ajouté avec succès`, 'error')
   };
 
  
@@ -49,6 +47,14 @@ function KanbansAddForm() {
               type="text"
               name="uid_nfc"
               placeholder="Identifiant kanban"
+            />
+          </div>
+          <div className="input-group">
+            <input
+              onChange={handleInput}
+              type="number"
+              name="quantite"
+              placeholder="Quantité par kanban"
             />
           </div>
           <div className="input-group">

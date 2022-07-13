@@ -22,15 +22,15 @@ const {setAlert} = useContext(AlertContext)
   const handleForm = (e) => {
     e.preventDefault();
     if (order.date_commande === "") {
-      setAlert("Vous devez entrez une date", 'error');
+      setAlert ("Vous devez entrer une date", 'error');
       return;
     }
     if (order.num_commande === "") {
-      setAlert("Vous devez entrez un numéro de commande", 'error');
+      setAlert("Vous dever entrer un numéro de commande", 'error');
       return;
     }
     if (order.quantite_commande === "") {
-      setAlert("Vous devez entrez une quantité a la  commande", 'error');
+      setAlert("Vous devez entrer une quantité à la  commande", 'error');
       return;
     } else {
       console.log(order , request.id);
@@ -38,7 +38,7 @@ const {setAlert} = useContext(AlertContext)
       e.preventDefault();
       axios.put(`http://localhost:9000/sfac/api/demande/${request.id}`, order);
       
-      setAlert("demande traiter", 'error');
+      setAlert("La demande a été traitée avec succès", 'error');
    
       setTimeout(() => window.location.reload(), 2000)
     

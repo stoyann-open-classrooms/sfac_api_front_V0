@@ -1,6 +1,5 @@
 import React from 'react'
 import './KanbanOrderTable.css'
-import { Link } from 'react-router-dom'
 function KanbanOrderTable({kanban}) {
   return (
    
@@ -8,6 +7,7 @@ function KanbanOrderTable({kanban}) {
     <thead>
       <tr>
         <th>numero de commande</th>
+        <th>quantité commandé</th>
         <th>Date demande</th>
         <th>Date Commande</th>
         <th>Départ fournisseur</th>
@@ -28,6 +28,7 @@ function KanbanOrderTable({kanban}) {
                 {order.num_commande}  </a> </button> </td>
                
        
+                <td>{order.quantite_commande}</td>
                 <td>{new Date(order.createdAt).toLocaleDateString()}</td>
                 <td>{new Date(order.date_commande).toLocaleDateString()}</td>
                 <td>{new Date(order.depart_fournisseur).toLocaleDateString()}</td>

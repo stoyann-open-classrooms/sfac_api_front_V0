@@ -2,6 +2,7 @@ import React from 'react'
 import { useContext, useEffect } from "react";
 import ProductContext from "../../context/Product/ProductContext";
 import SearchContext from "../../context/Search/searchContext";
+import Alert from '../Shared/Alert/Alert';
 import ProductsItem from "./ProductsItem";
 
 function ProductsList() {
@@ -25,6 +26,7 @@ function ProductsList() {
   
 
      <div>
+      <Alert/>
 <h3 className='days-unt'>Produits en base de donées <span>{products.length}  </span> </h3>
         <div className="list">
         {products

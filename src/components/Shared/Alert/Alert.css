@@ -55,6 +55,7 @@ input:focus {
 
 .alert {
   padding: 1rem;
+  margin-top: 4rem;
   color: black;
   border: solid 2px #e3001b;
   z-index: 99999999999999;

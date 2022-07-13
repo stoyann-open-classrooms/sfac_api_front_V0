@@ -13,6 +13,7 @@ import Products from "./pages/Products/Products";
 import Header from "./components/Header/Header.jsx";
 import Order from "./pages/Order/Order";
 import {AlertProvider} from "./context/Alerte/AlerteContext";
+import Alert from "./components/Shared/Alert/Alert";
 
 function App() {
   return (
@@ -26,8 +27,8 @@ function App() {
 
             <Router>
               <Header />
+   
               <div className="container ">
-         
                 <Routes>
                   <Route path="/" element={<Home />}></Route>
                   <Route path="/products" element={<Products />} />

@@ -354,4 +354,21 @@ form h3 {
 
 .btn-form-submit {
   margin: 1rem 0;
+}
+
+.qt-kanban {
+  max-width: 1200px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+.qt-kanban h1 {
+  flex: 3;
+  font-size: 3rem;
+}
+.qt-kanban div {
+  background-color: #e3001b;
+  padding: 0.2rem 2rem;
+  border-radius: 1rem;
+  font-size: 4rem;
 }/*# sourceMappingURL=index.css.map */

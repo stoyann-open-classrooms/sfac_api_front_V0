@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import don from '../Assets/upload_icone.png'
 import axios from "axios";
+import AlertContext from "../../context/Alerte/AlerteContext";
+
+
 function ProductAddForm() {
   const [product, setProduct] = useState({});
   const [image, setImage] = useState("");
+  const {setAlert} = useContext(AlertContext)
+
   const formData = new FormData();
   formData.append("image", image);
   formData.append("designation", product.designation);
@@ -11,8 +16,10 @@ function ProductAddForm() {
   const handleForm = (e) => {
     e.preventDefault();
     axios.post("http://localhost:9000/sfac/api/produit/addProduit", formData);
-    window.location.reload();
-    console.log("submit !");
+  
+    setAlert(`Le produit  ${product.designation} a été ajouté avec succès`, 'error')
+  
+    setTimeout(() => window.location.reload(), 2000)
   };
 
   const handleInput = ({ currentTarget }) => {

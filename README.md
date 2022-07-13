@@ -1,3 +1,63 @@
+
+# Architecture du projet
+Ce projet, dit front-end, est développé avec le Framework React il est connecté à un service API back-end que vous devez aussi lancer en local.
+Le projet back-end se trouve ici : https://github.com/stoyann-open-classrooms/sfac_api_back_V0
+
+
+# Organisation de l'espace de travail.
+
+Pour une bonne organisation, vous pouvez créer un dossier **sfac_app** dans lequel vous allez cloner le projet back-end et par la suite, le projet front-end :
+
+Clonez le projet back-end dans le dossier **sfac-app** :
+
+```
+$ git clone https://github.com/stoyann-open-classrooms/sfac_api_back_V0.git
+```
+
+```
+sfac-app/
+   - sfac_api_front_V0
+```
+
+Clonez le projet frontend dans le dossier bill-app :
+
+```
+$ git clone https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-Front.git
+```
+
+```
+sfac-app/
+   - sfac_api_front_V0
+   - sfac_api_back_V0
+```
+## Lancer l'application en local ?
+
+### étape 1 - Lancer le backend :
+
+Suivez les indications dans le README du projet [https://github.com/stoyann-open-classrooms/sfac_api_back_V0](backend) .
+
+### étape 2 - Lancer le frontend :
+
+Allez au repo cloné :
+```
+cd sfac_api_front_V0
+```
+
+Installez les packages npm (décrits dans `package.json`) :
+```
+npm install
+```
+
+### étape 3 - Lancer l'application en local :
+
+```
+npm start
+```
+
+## L'application est disponible sur le port : [http://localhost:3000](http://localhost:3000)
+
+
+============================================================================
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

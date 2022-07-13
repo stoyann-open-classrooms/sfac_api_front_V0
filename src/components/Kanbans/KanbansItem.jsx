@@ -16,7 +16,9 @@ function KanbansItem({ kanban }) {
 
     axios.delete(`
     http://localhost:9000/sfac/api/kanban/${id}`);
-    setAlert("Kanban supprimer", "error")
+    
+    setAlert(`Le  kanban a été supprimé avec succès`, 'error')
+    setTimeout(() => window.location.reload(), 2000)
 
   }
   
@@ -42,6 +44,8 @@ function KanbansItem({ kanban }) {
         <div>
 
       <h3 className='title-card'> kanban : {kanban.uid_nfc}</h3>
+   <div> quantité par kanban : {kanban.quantite}</div>
+   
       </div>
         {kanban.produitId ? (
           

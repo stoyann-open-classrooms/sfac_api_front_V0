@@ -23,6 +23,8 @@ const params = useParams()
           `http://localhost:9000/sfac/api/kanban/${params.id}`,
           updateKanban,
         )
+   window.location.reload()
+
        
   
       }

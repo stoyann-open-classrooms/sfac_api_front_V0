@@ -23,11 +23,20 @@ function KanbanHeader({kanban}) {
             </Dialog>
             </div>
         ) : (
-            <>
+          <>
             <KanbanCover kanban={kanban.data}/>
-        
-            <h2 className='big-title'>Historique des commandes</h2>
+            
+            <Dialog btn={'modifier le kanban'}>
 
+</Dialog>
+            <div className="qt-kanban">
+
+        <h1 > quantité par kanban</h1>
+        <div>{kanban.data.quantite }</div>
+   
+            </div>
+            <h2 className='big-title'>Historique des commandes</h2>
+         
             <KanbanOrderTable kanban={kanban.data}/>
             </>
         )}
