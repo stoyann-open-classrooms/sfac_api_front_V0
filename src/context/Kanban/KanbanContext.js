@@ -1,44 +1,62 @@
-import { createContext, useReducer } from "react";
-import kanbanReducer from "./KanbanReducer";
+import { createContext, useReducer } from 'react'
+import kanbanReducer from './KanbanReducer'
+import axios from 'axios'
 
-const KanbanContext = createContext();
+const KanbanContext = createContext()
 export const KanbanProvider = ({ children }) => {
   const initialState = {
     kanbans: [],
     kanban: {},
     loading: false,
-  };
+  }
 
-  const [state, dispatch] = useReducer(kanbanReducer, initialState);
+  const [state, dispatch] = useReducer(kanbanReducer, initialState)
 
-  //get initial users (testing purpose)
+
   const fetchKanbans = async () => {
-    setLoading();
+    setLoading()
     const response = await fetch(
-      `http://localhost:9000/sfac/api/kanban/allKanbans`
-    );
-    const data = await response.json();
+      `http://localhost:5000/sfac/api/kanban/allKanbans`,
+    )
+    const data = await response.json()
 
     dispatch({
-      type: "GET_KANBANS",
+      type: 'GET_KANBANS',
       payload: data.data,
-    });
-  };
+    })
+  }
 
   const getKanban = async (login) => {
-    setLoading();
+    setLoading()
     const response = await fetch(
-      `http://localhost:9000/sfac/api/kanban/${login}`
-    );
-    const data = await response.json();
+      `http://localhost:5000/sfac/api/kanban/${login}`,
+    )
+    const data = await response.json()
 
     dispatch({
-      type: "GET_KANBAN",
+      type: 'GET_KANBAN',
       payload: data,
-    });
-  };
+    })
+  }
 
-  const setLoading = () => dispatch({ type: "SET_LOADING" });
+  const deleteKanban = (id) => {
+    if (window.confirm('Êtes vous sur de vouloir supprimer ce Kanban ?')) {
+      axios.delete(`
+     http://localhost:5000/sfac/api/kanban/${id}`)
+    }
+    setTimeout(() => window.location.reload(), 2000)
+  }
+
+  const addKanban = (kanban) => {
+    axios.post('http://localhost:5000/sfac/api/kanban/addKanban', kanban)
+    setTimeout(() => window.location.reload(), 2000)
+  }
+  const updateKanban = (kanban, id) => {
+    axios.put(`http://localhost:5000/sfac/api/kanban/${id}`, kanban)
+    setTimeout(() => window.location.reload(), 2000)
+  }
+
+  const setLoading = () => dispatch({ type: 'SET_LOADING' })
 
   return (
     <KanbanContext.Provider
@@ -48,11 +66,14 @@ export const KanbanProvider = ({ children }) => {
         loading: state.loading,
         fetchKanbans,
         getKanban,
+        addKanban,
+        updateKanban,
+        deleteKanban,
       }}
     >
       {children}
     </KanbanContext.Provider>
-  );
-};
+  )
+}
 
-export default KanbanContext;
+export default KanbanContext

@@ -1,32 +1,32 @@
 import { useState } from "react";
 import close_icone from "../../Assets/icones/close_icone.svg";
 import Add_icone from "../../Assets/icones/red/add_red.png";
+
+import './styles/Dialog.css'
+import Button from "../Button/Button";
 import Alert from "../Alert/Alert";
+
 
 
 function Dialog({ btn, children, addIcone, editIcone}) {
   const [modal, setModal] = useState(true);
   
   const toogleModal = (e) => {
-   
       setModal(!modal);
-
-    
-    
   };
 
 
   return (
     <>
-      <button className="add-btn"  onClick={toogleModal}>
+      <Button toogle={toogleModal}>
        {!addIcone ? (<img src={Add_icone} alt="" />) : ("") }
         
        {btn}
-      </button>
+      </Button>
       {!modal ? (
         <div className="overlay">
           <div className="modal">
-            <button onKeyUp={toogleModal} onClick={toogleModal} className="close-Modal">
+            <button onClick={toogleModal} className="close-Modal">
               <img
                 src={close_icone}
                 alt="fermeture boite de dialogue."
@@ -34,7 +34,8 @@ function Dialog({ btn, children, addIcone, editIcone}) {
        
             </button>
             <div className='dialog_form'>
-              <Alert/>
+            <Alert/>
+           
         {children}
     </div>
           </div>

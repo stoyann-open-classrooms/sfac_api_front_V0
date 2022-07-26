@@ -1,9 +1,15 @@
 import PropTypes from "prop-types";
-import "./Button.css";
 
-function Button({ children, version, type, isDisabled }) {
+import "./styles/Button.css";
+
+function Button({ toogle, children, icone, version, type, isDisabled }) {
+
+ 
+  
+  
+  
   return (
-    <button type={type} disabled={isDisabled} className={`btn btn-${version}`}>
+    <button  onClick={toogle} icone={icone} type={type} disabled={isDisabled} className={`btn btn-${version}`}>
       {children}
     </button>
   );

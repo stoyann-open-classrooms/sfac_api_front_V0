@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  color: #fff;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0.3rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:active {
+  transform: scale(0.98);
+}
+
+input {
+  flex-grow: 2;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+}
+
+input:focus {
+  outline: none;
+}
+
+.btn {
+  color: #d4d4d4;
+  border: 0;
+  display: flex;
+  padding: 0.5rem;
+  margin: 1rem auto;
+  align-items: center;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.btn img {
+  margin: 0 1rem 0 0;
+}
+
+.btn-primary {
+  background-color: #202142;
+}
+
+.btn-secondary {
+  background: #e3001b;
+}
+
+.btn:hover {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.btn:disabled {
+  background-color: #04030f;
+  color: #333;
+  cursor: auto;
+}
+
+.btn:disabled:hover {
+  transform: scale(1);
+  opacity: 1;
+}/*# sourceMappingURL=Button.css.map */

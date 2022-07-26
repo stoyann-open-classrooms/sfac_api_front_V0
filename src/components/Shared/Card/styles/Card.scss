@@ -1,0 +1,178 @@
+@import '../../../../styles/reset';
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+@import '../../../../styles/placeholders';
+
+.card {
+  background-color: #fff;
+  color: #333;
+  width: 350px;
+  border-radius: 15px;
+  margin: 1rem 1rem;
+
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+
+
+.card-cover {
+  width: 22%;
+  height: 15rem;
+  margin: 0 1rem 0 0;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.card-cover-img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+}
+
+.num-display {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 19px;
+  border: 1px #eee solid;
+  transition: 0.3s;
+  position: absolute;
+  top: -10px;
+  background-color: $darkBlue;
+  color: #fff;
+  font-weight: bolder;
+  border: 2px solid $blue;
+  left: -10px;
+}
+
+.card-body {
+  width: 70%;
+}
+.card-title {
+  color: $darkBlue;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  @extend %text-cut;
+  text-transform: uppercase;
+}
+.close,
+.edit {
+  position: absolute;
+  top: 1%;
+  right: 2%;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.edit {
+  right: 8%;
+}
+
+.card-info {
+  color: $light;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.mini-card {
+  background-color: gray;
+  flex: 1;
+  width: auto;
+  margin: 0.3rem;
+  color: $darkBlue;
+  padding: 0.8rem;
+  text-align: center;
+  box-shadow: $shadow;
+  border-radius: $radius;
+  p {
+    margin: 0.3rem auto;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    border-radius: $radius;
+  }
+}
+
+.inOrder {
+  position: absolute;
+  top: 2%;
+  font-weight: bolder;
+  padding: 0.2rem 1rem;
+  left: 5%;
+  background-color: $success;
+  color: $light;
+  border-radius: $radius;
+}
+.status {
+  position: absolute;
+  bottom: 10%;
+  font-weight: bolder;
+  padding: 0.2rem 1rem;
+  left: 2%;
+  background-color: $success;
+  color: $light;
+  border-radius: $radius;
+}
+
+.rupture{
+  background-color: $danger;
+  color: $light;
+}
+.stock{
+  background-color: $success;
+  color: $light;
+}
+.refference{
+  background-color: $blue;
+  color: $light;
+}
+
+.card-subtitle {
+  color: red;
+  margin-bottom: 0.5rem;
+  @extend %text-cut;
+  width: 91%;
+  
+}
+
+.card-request-hero{
+  display: flex;
+  margin-top: 1rem;
+  .text{
+    flex: 3;
+  }
+}
+
+.card-info-date {
+  display: flex;
+  
+}
+
+.card-info-order {
+  color: $light;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.card-date{
+  margin: 1rem;
+
+  h3{
+    font-size: 1rem;
+  }
+  p{
+    border-radius: $radius;
+    text-align: center;
+    padding: 0.6rem;
+  }
+}

@@ -15,13 +15,7 @@ const requestReducer = (state, action) => {
       };
     }
 
-    case "GET_ORDERS": {
-      return {
-        ...state,
-        orders: action.payload,
-        loading: false,
-      };
-    }
+   
     case "GET_ARCHIVES": {
       return {
         ...state,

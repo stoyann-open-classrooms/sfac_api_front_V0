@@ -3,17 +3,3 @@
 @import "../../../styles/mixins";
 @import "../../../styles/placeholders";
 
-.alert{
-    padding: 1rem;
-   margin-top: 4rem;
-    color: black ;
-   border: solid 2px  $primary;
-    z-index: 99999999999999;
-    font-weight: bolder;
-border-radius: 2rem;
-display: flex;
-    background-color: white;
-
-    animation: flip-in-hor-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-
-}

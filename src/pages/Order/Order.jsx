@@ -1,72 +1,27 @@
-import {useEffect, useContext} from 'react'
-import OrderInfo from '../../components/Order/OrderInfo'
+
+import { useContext, useEffect } from "react"
 import { useParams } from 'react-router-dom'
+import OrderActions from "../../components/Order/OrderActions"
+import './styles/Order.css'
+import OrderContext from "../../context/Order/OrderContext"
 
-import RequestContext from '../../context/Request/RequestContext'
-import ProductInfo from '../../components/Order/ProductInfo'
-import Dialog from '../../components/Shared/Dialog/Dialog'
-import EditOrderForm from './EditOrderForm'
 function Order() {
+const params = useParams()
+  const { order, loading, getOrder } = useContext(OrderContext)
 
-  const { getRequest, request, loading } = useContext(RequestContext)
-  
-
-  const params = useParams()
   useEffect(() => {
-    getRequest(params.id)
-   
+    getOrder(params.id)
   }, [])
 
-
-
-if(loading) {
+if (loading) {
   return <h1> chargement ...</h1>
 } else {
   return (
-    <div className='main-container'>
-         <div className='title-kanban'>
-      <p className='title-tag'>{request.status}</p>
-      <h1 className='big-title'>Commande -  {request.num_commande}</h1>
-      </div>
-      <Dialog btn={'Modifier'}>
-<EditOrderForm order={request}/>
-</Dialog>
-{request.date_livraison === null ? (
-  
-  <h2 className='days-unt'>Jours dépuis la demande
-  <span>
-{Math.round(
-  (Date.now() - new Date(request.createdAt).getTime()) /
-  (1000 * 3600 * 24)
-  )}  
-  </span> 
-
-</h2>
-  
-  ): (
-    <>
-    <h2 className='days-unt'>Cette commande a mis 
-  <span>
-  {Math.round(
-    (new Date(request.date_livraison) - new Date(request.createdAt).getTime()) /
-    (1000 * 3600 * 24)
-    )}  
-    </span> 
-     jours pour être livrée.
-    </h2>
-  
-    </>
-    
-)}
-
-        
-      
-      
-   
-  <OrderInfo request={request}/>
-  <ProductInfo request={request}/>
-    </div>
+   <div className="main-container">
+    <h1 className="big-title">Commande - {order.num_commande}</h1>
+    <OrderActions order={order}/>
+   </div>
   )
-}}
-
+}
+}
 export default Order

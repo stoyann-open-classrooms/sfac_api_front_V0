@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  color: #fff;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0.3rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:active {
+  transform: scale(0.98);
+}
+
+input {
+  flex-grow: 2;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+}
+
+input:focus {
+  outline: none;
+}
+
+.warning {
+  background-color: #a75017;
+  color: #d4d4d4;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 1rem;
+}
+
+.success {
+  background-color: #1c471f;
+  color: #d4d4d4;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 1rem;
+}
+
+.standart {
+  background-color: #202142;
+  color: #d4d4d4;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 1rem;
+}
+
+.danger {
+  background-color: #8f1010;
+  color: #d4d4d4;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 1rem;
+}
+
+@-webkit-keyframes flip-in-hor-top {
+  0% {
+    transform: rotateX(-80deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flip-in-hor-top {
+  0% {
+    transform: rotateX(-80deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slide-in-right {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}/*# sourceMappingURL=Products.css.map */

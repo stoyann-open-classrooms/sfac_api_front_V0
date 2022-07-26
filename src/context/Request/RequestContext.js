@@ -1,22 +1,22 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useContext } from "react";
 import requestReducer from "./RequestReducer";
-
+import AlertContext from "../Alerte/AlerteContext";
+import axios from "axios";
 const RequestContext = createContext();
 export const RequestProvider = ({ children }) => {
   const initialState = {
     requests: [],
-    orders: [],
     archives: [],
     request: {},
     loading: false,
   };
-
+  const { setAlert } = useContext(AlertContext)
   const [state, dispatch] = useReducer(requestReducer, initialState);
 
   const fetchRequests = async () => {
     setLoading();
     const response = await fetch(
-      `http://localhost:9000/sfac/api/demande/aTraiter`
+      `http://localhost:5000/sfac/api/demande/aTraiter`
     );
     const data = await response.json();
 
@@ -26,22 +26,11 @@ export const RequestProvider = ({ children }) => {
     });
   };
 
-  const fetchOrders = async () => {
-    setLoading();
-    const response = await fetch(
-      `http://localhost:9000/sfac/api/demande/enCours`
-    );
-    const data = await response.json();
-
-    dispatch({
-      type: "GET_ORDERS",
-      payload: data.data,
-    });
-  };
+  
   const fetchArchives = async () => {
     setLoading();
     const response = await fetch(
-      `http://localhost:9000/sfac/api/demande/recue`
+      `http://localhost:5000/sfac/api/demande/archive`
     );
     const data = await response.json();
 
@@ -54,7 +43,7 @@ export const RequestProvider = ({ children }) => {
   const getRequest = async (login) => {
     setLoading();
     const response = await fetch(
-      `http://localhost:9000/sfac/api/demande/${login}`
+      `http://localhost:5000/sfac/api/demande/${login}`
     );
     const data = await response.json();
 
@@ -63,11 +52,16 @@ export const RequestProvider = ({ children }) => {
       payload: data.data,
     });
   };
-  const deleteRequest = (e) => {
-    if (window.confirm("Êtes vous sur de vouloir supprimer cette demande ?")) {
-      console.log("to do SUPPRIMER L'item");
+  const deleteRequest = (id) => {
+    if (window.confirm('Êtes vous sur de vouloir supprimer cette demande ?')) {
+      axios.delete(`
+     http://localhost:5000/sfac/api/demande/${id}`)
+     setTimeout(() => window.location.reload(), 1000)
+     setAlert('La demande est supprimée')
     }
-  };
+   
+  }
+
 
   const setLoading = () => dispatch({ type: "SET_LOADING" });
 
@@ -77,12 +71,10 @@ export const RequestProvider = ({ children }) => {
         requests: state.requests,
         request: state.request,
         archives: state.archives,
-        orders: state.orders,
         loading: state.loading,
         fetchRequests,
         getRequest,
         fetchArchives,
-        fetchOrders,
         deleteRequest,
       }}
     >

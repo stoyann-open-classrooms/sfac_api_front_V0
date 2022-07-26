@@ -1,25 +1,32 @@
-import { useContext, useEffect } from "react";
-import RequestContext from "../../context/Request/RequestContext";
-import OrdersItem from './OrdersItem';
+import Dialog from '../Shared/Dialog/Dialog'
+import OrdersItem from './OrdersItem'
 
-function OrdersList() {
-    const { orders, loading, fetchOrders } = useContext(RequestContext);
+function OrdersList({orders}) {
 
-    useEffect(() => {
-      fetchOrders();
-    }, []);
-  
-    if (!loading || orders.length === 0) {
-      return (
-        <div className="list">
-          {orders.map((order) => (
-            <OrdersItem key={order.id}  order={order} />
-          ))}
+  if (!orders) {
+    return <h1>loading...</h1>
+  } else {
+    return (
+
+        <div>
+        <div className="info-list">
+          <h3>
+         Commandes en cours
+           <span className="nb-info danger">{orders.length} </span>{' '}
+          </h3>
+         
         </div>
-      );
-    } else {
-      return <h2>Loading...</h2>;
-    }
+        <section className="list">
+          {orders.filter((order) => order.archive === false)
+          
+          .map((order) => (
+              <OrdersItem  key={order.id} order={order} />
+            ))}
+        </section>
+      </div>
+    )
   }
+}
+
 
 export default OrdersList

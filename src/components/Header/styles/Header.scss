@@ -1,0 +1,57 @@
+@import '../../../styles/reset';
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+@import '../../../styles/placeholders';
+@import '../../../styles/foreach';
+@import '../../../styles/animations';
+
+header {
+  height: 9vh;
+  background-color: $secondary;
+  color: white;
+  padding: 3vh 8vw;
+  z-index: 100;
+  position: fixed;
+  width: 100vw;
+  z-index: 999999;
+}
+
+.header-body {
+  display: flex;
+  justify-content: center;
+  height: auto;
+  padding-left: 10%;
+  align-items: center;
+}
+
+.header-time {
+  padding: 0.2rem 0.6rem;
+  border-radius: $radius;
+  background-color: $blue;
+  height: 2.6rem;
+
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 1.2rem;
+}
+
+header-requests {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-radius: $radius;
+  padding: 0.5rem 2rem;
+  background-color: $primary;
+}
+
+.header-title {
+  flex: 3;
+  text-align: center;
+}
+
+.nb {
+  text-align: center;
+  background-color: $blue;
+  border-radius: $radius;
+  font-size: 1.3rem;
+}

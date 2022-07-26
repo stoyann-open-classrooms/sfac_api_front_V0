@@ -1,0 +1,21 @@
+@import "../../../styles/reset";
+@import "../../../styles/variables";
+@import "../../../styles/placeholders";
+@import "../../../styles/foreach";
+@import "../../../styles/mixins";
+@import "../../../styles/animations";
+
+
+.kanban-product{
+    display: flex;
+    align-items: center;
+}
+.kanban-product-title{
+    font-size: 1.9rem;
+    flex: 3;
+    @extend %text-cut
+}
+.kanban-product-refference{
+    font-size: 1.9rem;
+    flex: 3;
+}

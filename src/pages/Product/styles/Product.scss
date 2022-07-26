@@ -1,0 +1,99 @@
+@import '../../../styles/reset';
+@import '../../../styles/variables';
+@import '../../../styles/placeholders';
+@import '../../../styles/foreach';
+@import '../../../styles/mixins';
+@import '../../../styles/animations';
+
+.no-kanban {
+  padding: 1.2rem;
+  border-radius: $radius;
+  border: 3px solid $darkBlue;
+  p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+.product-stats {
+  display: flex;
+  margin: 2rem 0;
+}
+
+.card-stats {
+  border-radius: $radius;
+  padding: 1rem;
+  box-shadow: $shadow;
+  margin: 0 1rem;
+  flex: 1;
+  background-color: $darkBlue;
+  h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1rem;
+    
+  }
+}
+
+.product-helper {
+  margin: 1.3rem 0;
+  position: relative;
+  background-color: $secondary;
+  border-radius: $radius;
+  padding: 2rem 2rem;
+  p {
+    font-size: 1.4rem;
+    margin: 3rem 0 1rem;
+    text-align: center;
+    flex: 5;
+  }
+  span {
+    background-color: $danger;
+    margin-left: 1rem;
+    border-radius: $radius;
+    padding: 0.3rem 1rem;
+    letter-spacing: 2px;
+  }
+}
+.box {
+  position: absolute;
+  top: 0;
+}
+
+.product-info {
+  display: flex;
+}
+
+.main-cover {
+  height: 15rem;
+  flex: 2;
+}
+
+.cover-img {
+  height: 17.6rem;
+  width: 100%;
+  object-fit: contain;
+}
+
+.product-hero {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  h3 {
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    text-align: center;
+  }
+}
+
+
+.dialog-btn{
+    position: absolute;
+    top: 15vh;
+}

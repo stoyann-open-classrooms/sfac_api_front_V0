@@ -1,0 +1,18 @@
+@import "../../../styles/reset";
+@import "../../../styles/variables";
+@import "../../../styles/placeholders";
+@import "../../../styles/foreach";
+@import "../../../styles/mixins";
+@import "../../../styles/animations";
+
+.order-actions {
+    display: flex;
+    align-items: center;
+
+h2 {
+    flex: 3;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+}
